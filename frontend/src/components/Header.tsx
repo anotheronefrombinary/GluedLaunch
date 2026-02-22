@@ -51,35 +51,7 @@ export function Header() {
           })}
         </nav>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="sm:hidden flex flex-col gap-1.5 p-2"
-          aria-label="Toggle menu"
-        >
-          <span
-            className="block w-6 h-0.5 transition-all"
-            style={{
-              background: '#00e87b',
-              transform: mobileMenuOpen ? 'rotate(45deg) translate(8px, 8px)' : 'none',
-            }}
-          />
-          <span
-            className="block w-6 h-0.5 transition-all"
-            style={{
-              background: '#00e87b',
-              opacity: mobileMenuOpen ? 0 : 1,
-            }}
-          />
-          <span
-            className="block w-6 h-0.5 transition-all"
-            style={{
-              background: '#00e87b',
-              transform: mobileMenuOpen ? 'rotate(-45deg) translate(7px, -7px)' : 'none',
-            }}
-          />
-        </button>
-
+        {/* Right side: Connect button + Mobile Menu Button */}
         <div className="flex items-center gap-3">
           <ConnectButton.Custom>
             {({
@@ -162,6 +134,35 @@ export function Header() {
               );
             }}
           </ConnectButton.Custom>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="sm:hidden flex flex-col gap-1.5 p-2"
+            aria-label="Toggle menu"
+          >
+            <span
+              className="block w-6 h-0.5 transition-all"
+              style={{
+                background: '#00e87b',
+                transform: mobileMenuOpen ? 'rotate(45deg) translate(8px, 8px)' : 'none',
+              }}
+            />
+            <span
+              className="block w-6 h-0.5 transition-all"
+              style={{
+                background: '#00e87b',
+                opacity: mobileMenuOpen ? 0 : 1,
+              }}
+            />
+            <span
+              className="block w-6 h-0.5 transition-all"
+              style={{
+                background: '#00e87b',
+                transform: mobileMenuOpen ? 'rotate(-45deg) translate(7px, -7px)' : 'none',
+              }}
+            />
+          </button>
         </div>
       </div>
 
