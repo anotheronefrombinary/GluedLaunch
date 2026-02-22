@@ -4,9 +4,11 @@ import { ConnectButton } from '@rainbow-me/rainbowkit';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 
 export function Header() {
   const pathname = usePathname();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
     { href: '/', label: 'Home' },
@@ -29,6 +31,7 @@ export function Header() {
           />
         </Link>
 
+        {/* Desktop Navigation */}
         <nav className="hidden sm:flex items-center gap-1">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
@@ -47,6 +50,35 @@ export function Header() {
             );
           })}
         </nav>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="sm:hidden flex flex-col gap-1.5 p-2"
+          aria-label="Toggle menu"
+        >
+          <span
+            className="block w-6 h-0.5 transition-all"
+            style={{
+              background: '#00e87b',
+              transform: mobileMenuOpen ? 'rotate(45deg) translate(8px, 8px)' : 'none',
+            }}
+          />
+          <span
+            className="block w-6 h-0.5 transition-all"
+            style={{
+              background: '#00e87b',
+              opacity: mobileMenuOpen ? 0 : 1,
+            }}
+          />
+          <span
+            className="block w-6 h-0.5 transition-all"
+            style={{
+              background: '#00e87b',
+              transform: mobileMenuOpen ? 'rotate(-45deg) translate(7px, -7px)' : 'none',
+            }}
+          />
+        </button>
 
         <div className="flex items-center gap-3">
           <ConnectButton.Custom>
@@ -132,6 +164,38 @@ export function Header() {
           </ConnectButton.Custom>
         </div>
       </div>
+
+      {/* Mobile Navigation Drawer */}
+      {mobileMenuOpen && (
+        <div
+          className="sm:hidden"
+          style={{
+            background: 'rgba(11, 12, 14, 0.95)',
+            borderBottom: '1px solid #1e2028',
+            backdropFilter: 'blur(10px)',
+          }}
+        >
+          <nav className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-2">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-4 py-2 text-sm font-medium rounded-lg transition-colors"
+                  style={{
+                    color: isActive ? '#00e87b' : '#8b8d97',
+                    background: isActive ? '#00e87b10' : 'transparent',
+                  }}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
