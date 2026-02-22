@@ -83,7 +83,7 @@ GluedLaunch is a decentralized token launchpad built on [Glue Protocol](https://
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/GluedLaunch.git
+git clone https://github.com/anotheronefrombinary/GluedLaunch.git
 cd GluedLaunch/frontend
 
 # Install dependencies

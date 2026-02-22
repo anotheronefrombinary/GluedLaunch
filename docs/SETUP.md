@@ -13,7 +13,7 @@ Detailed instructions for setting up GluedLaunch locally.
 ## 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/GluedLaunch.git
+git clone https://github.com/anotheronefrombinary/GluedLaunch.git
 cd GluedLaunch
 ```
 

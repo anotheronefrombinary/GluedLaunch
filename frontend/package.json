@@ -7,10 +7,10 @@
   "homepage": "https://gluedlaunch.3w.ge",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/GluedLaunch.git"
+    "url": "https://github.com/anotheronefrombinary/GluedLaunch.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/GluedLaunch/issues"
+    "url": "https://github.com/anotheronefrombinary/GluedLaunch/issues"
   },
   "scripts": {
     "dev": "next dev",
