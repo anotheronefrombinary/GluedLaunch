@@ -511,7 +511,7 @@ export default function FeaturesPage() {
       {/* Footer */}
       <footer style={{ borderTop: '1px solid #1e2028' }} className="mt-16 py-8">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm" style={{ color: '#5c5e69' }}>ETH Tbilisi Hackathon 2024</p>
+          <p className="text-sm" style={{ color: '#5c5e69' }}>GluedLaunch 2026</p>
           <div className="flex gap-6 text-sm">
             <Link href="/" className="transition-colors hover:text-white" style={{ color: '#5c5e69' }}>Home</Link>
             <Link href="/tokens" className="transition-colors hover:text-white" style={{ color: '#5c5e69' }}>All Tokens</Link>
